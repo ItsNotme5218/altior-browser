@@ -33,8 +33,10 @@ Most will down because of limits unless it is toward the start of the month. If 
 - **Games sidebar** — a one-click panel (icon to the right of the URL bar) with a
   curated list of game sites.
 - **Settings page** — `altior://settings`, opened with the gear icon to the right
-  of the games icon. Picks the proxy engine, shows whether it started cleanly, and
-  lists the sites allowed to open new windows so you can remove them.
+  of the games icon. Choose a browser theme, pick the proxy engine, check whether
+  it started cleanly, and manage the sites allowed to open new windows.
+- **Browser themes** — choose Graphite, Ocean, Forest, or Violet in Settings.
+  Your choice is saved on this device and applies to the browser interface.
 - **Proxied favicons** — site icons load through the proxy so they aren't blocked
   by the page's cross-origin isolation policy.
 - **Collapsible chrome** — hide the whole toolbar/tab strip for a fullscreen view.
@@ -126,4 +128,3 @@ git clone https://github.com/ltorl/altior-browser.git && cd altior-browser && pn
 <h1>Proxy Browser</h1>
 <h1>Proxy Unblocker</h1>
 <h1>Website Unblocker</h1>
-

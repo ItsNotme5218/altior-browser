@@ -17,7 +17,72 @@
             --fg: #3c3c3c;
             --text: #e8e8e8;
             --muted: #9aa0a6;
+            --accent: #45a29e;
+            --accent-bright: #66fcf1;
+            --accent-rgb: 69, 162, 158;
+            --accent-contrast: #0b0c10;
+            --page-start: #0b0c10;
+            --page-end: #1f2833;
+            --overlay-bg: #2b2b2b;
+            --suggestion-bg: rgba(20, 26, 33, 0.96);
+            --surface-hover: rgba(255, 255, 255, 0.18);
+            --tab-hover: #474747;
+            --site-hover: #555554;
             --trash-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>');
+        }
+
+        :root[data-theme="ocean"] {
+            --bg: #17212b;
+            --fg: #22313e;
+            --text: #e8f1fa;
+            --muted: #9eb0c3;
+            --accent: #4f9ed1;
+            --accent-bright: #8bd5ff;
+            --accent-rgb: 79, 158, 209;
+            --accent-contrast: #10202d;
+            --page-start: #101b28;
+            --page-end: #1c3347;
+            --overlay-bg: #20303e;
+            --suggestion-bg: rgba(16, 27, 40, 0.96);
+            --surface-hover: rgba(139, 213, 255, 0.2);
+            --tab-hover: #30495c;
+            --site-hover: #31495b;
+        }
+
+        :root[data-theme="forest"] {
+            --bg: #18231d;
+            --fg: #25362b;
+            --text: #edf4ed;
+            --muted: #a0b3a4;
+            --accent: #77ad7b;
+            --accent-bright: #b1e3ad;
+            --accent-rgb: 119, 173, 123;
+            --accent-contrast: #142016;
+            --page-start: #111b15;
+            --page-end: #24382a;
+            --overlay-bg: #25362b;
+            --suggestion-bg: rgba(17, 27, 21, 0.96);
+            --surface-hover: rgba(177, 227, 173, 0.2);
+            --tab-hover: #354a3a;
+            --site-hover: #3b4d40;
+        }
+
+        :root[data-theme="violet"] {
+            --bg: #241d2b;
+            --fg: #362a40;
+            --text: #f3eafa;
+            --muted: #b3a5bc;
+            --accent: #b18ad8;
+            --accent-bright: #dbc0ff;
+            --accent-rgb: 177, 138, 216;
+            --accent-contrast: #271932;
+            --page-start: #17111e;
+            --page-end: #342541;
+            --overlay-bg: #362a40;
+            --suggestion-bg: rgba(23, 17, 30, 0.96);
+            --surface-hover: rgba(219, 192, 255, 0.2);
+            --tab-hover: #4a3c55;
+            --site-hover: #51435c;
         }
 
         * {
@@ -167,7 +232,7 @@
             right: 2px;
             top: 0;
             bottom: 6px;
-            background: #474747;
+            background: var(--tab-hover);
             border-radius: 8px;
             pointer-events: none;
             z-index: -1;
@@ -251,7 +316,7 @@
         }
 
         .tab .tab-close:hover {
-            background: rgba(255, 255, 255, 0.18);
+            background: var(--surface-hover);
             color: #fff;
         }
 
@@ -375,12 +440,12 @@
         }
 
         #url-suggest .suggest-item.open-link {
-            color: #cfe0ff;
-            background: rgba(80, 130, 255, 0.18);
+            color: var(--accent-bright);
+            background: rgba(var(--accent-rgb), 0.18);
         }
 
         #url-suggest .suggest-item.open-link.active {
-            background: rgba(80, 130, 255, 0.32);
+            background: rgba(var(--accent-rgb), 0.32);
         }
 
         #site-btn {
@@ -391,12 +456,12 @@
             margin-left: -3px;
             margin-right: 6px;
             border-radius: 50%;
-            background: #3c3c3c;
+            background: var(--fg);
         }
 
         #site-btn:hover,
         #site-btn.active {
-            background: #555554;
+            background: var(--site-hover);
         }
 
         #site-btn img {
@@ -490,7 +555,7 @@
 
         #games-btn.active,
         #settings-btn.active {
-            background: rgba(120, 170, 255, 0.18);
+            background: rgba(var(--accent-rgb), 0.18);
         }
 
         .sidebar {
@@ -543,6 +608,30 @@
             overflow-y: auto;
         }
 
+        #games-sidebar-list {
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) var(--fg);
+        }
+
+        #games-sidebar-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #games-sidebar-list::-webkit-scrollbar-track {
+            background: var(--fg);
+            border-radius: 8px;
+        }
+
+        #games-sidebar-list::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border: 2px solid var(--fg);
+            border-radius: 8px;
+        }
+
+        #games-sidebar-list::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-bright);
+        }
+
         #games-sidebar-list .gs-link {
             padding: 12px 16px;
             border-radius: 10px;
@@ -556,8 +645,8 @@
         }
 
         #games-sidebar-list .gs-link:hover {
-            background: #45a29e;
-            color: #0b0c10;
+            background: var(--accent);
+            color: var(--accent-contrast);
             transform: translateX(-2px);
         }
 
@@ -565,7 +654,7 @@
             position: absolute;
             inset: 0;
             overflow-y: auto;
-            background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+            background: linear-gradient(135deg, var(--page-start) 0%, var(--page-end) 100%);
             color: var(--text);
             padding: 40px 20px 60px;
         }
@@ -608,13 +697,19 @@
             transition: background 0.15s ease, border-color 0.15s ease;
         }
 
+        button.set-option {
+            width: 100%;
+            font: inherit;
+            text-align: left;
+        }
+
         .set-option:hover {
             background: rgba(255, 255, 255, 0.11);
         }
 
         .set-option.selected {
-            border-color: #45a29e;
-            background: rgba(69, 162, 158, 0.16);
+            border-color: var(--accent);
+            background: rgba(var(--accent-rgb), 0.16);
         }
 
         .set-radio {
@@ -628,8 +723,20 @@
         }
 
         .set-option.selected .set-radio {
-            border-color: #66fcf1;
-            box-shadow: inset 0 0 0 3px #66fcf1;
+            border-color: var(--accent-bright);
+            box-shadow: inset 0 0 0 3px var(--accent-bright);
+        }
+
+        .set-theme-swatch {
+            display: block;
+            flex: 0 0 22px;
+            width: 22px;
+            height: 22px;
+            margin-top: 1px;
+            border-radius: 50%;
+            outline: 1px solid rgba(255, 255, 255, 0.35);
+            overflow: hidden;
+            clip-path: circle(50%);
         }
 
         .set-option .set-name {
@@ -662,7 +769,7 @@
         }
 
         .set-dot.ready {
-            background: #66fcf1;
+            background: var(--accent-bright);
         }
 
         .set-dot.failed {
@@ -820,8 +927,8 @@
             position: absolute;
             inset: 0;
             overflow-y: auto;
-            background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
-            color: #fff;
+            background: linear-gradient(135deg, var(--page-start) 0%, var(--page-end) 100%);
+            color: var(--text);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -834,7 +941,7 @@
             font-weight: 800;
             letter-spacing: 3px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(0, 195, 255, 0.6);
+            text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.6);
             margin-bottom: 28px;
         }
 
@@ -860,7 +967,7 @@
             top: calc(100% + 8px);
             left: 0;
             right: 0;
-            background: rgba(20, 26, 33, 0.96);
+            background: var(--suggestion-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -877,7 +984,7 @@
         .newtab .nt-suggest .suggest-item {
             padding: 12px 18px;
             border-radius: 8px;
-            color: #fff;
+            color: var(--text);
             font-size: 15px;
             cursor: pointer;
             white-space: nowrap;
@@ -886,13 +993,13 @@
         }
 
         .newtab .nt-suggest .suggest-item.active {
-            background: #45a29e;
-            color: #0b0c10;
+            background: var(--accent);
+            color: var(--accent-contrast);
         }
 
         .newtab .nt-input-group:focus-within {
-            border-color: rgba(0, 195, 255, 0.4);
-            box-shadow: 0 0 25px rgba(0, 195, 255, 0.15);
+            border-color: rgba(var(--accent-rgb), 0.4);
+            box-shadow: 0 0 25px rgba(var(--accent-rgb), 0.15);
         }
 
         .newtab .nt-input {
@@ -900,7 +1007,7 @@
             padding: 14px 20px;
             border: none;
             background: transparent;
-            color: #fff;
+            color: var(--text);
             font-size: 16px;
             outline: none;
             user-select: text;
@@ -915,8 +1022,8 @@
             cursor: pointer;
             border-radius: 8px;
             border: none;
-            background: #45a29e;
-            color: #0b0c10;
+            background: var(--accent);
+            color: var(--accent-contrast);
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -924,14 +1031,14 @@
         }
 
         .newtab .nt-go:hover {
-            background: #66fcf1;
-            box-shadow: 0 0 25px rgba(102, 252, 241, 0.5);
+            background: var(--accent-bright);
+            box-shadow: 0 0 25px rgba(var(--accent-rgb), 0.5);
         }
 
         #ctx-menu {
             position: fixed;
             min-width: 200px;
-            background: #2b2b2b;
+            background: var(--overlay-bg);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 8px;
             padding: 6px 0;
@@ -966,7 +1073,7 @@
         .bm-dropdown {
             position: fixed;
             min-width: 200px;
-            background: #2b2b2b;
+            background: var(--overlay-bg);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 8px;
             padding: 6px 0;
@@ -1022,7 +1129,7 @@
         }
 
         .modal {
-            background: #2b2b2b;
+            background: var(--overlay-bg);
             border-radius: 12px;
             padding: 22px;
             width: 380px;
@@ -1056,7 +1163,7 @@
         }
 
         .modal input:focus {
-            border-color: rgba(120, 170, 255, 0.6);
+            border-color: rgba(var(--accent-rgb), 0.6);
         }
 
         .modal .modal-msg {
@@ -1093,12 +1200,12 @@
         }
 
         .btn-ok {
-            background: #4a90d9;
+            background: var(--accent);
             color: #fff;
         }
 
         .btn-ok:hover {
-            background: #5a9fe8;
+            background: var(--accent-bright);
         }
     </style>
 </head>
@@ -1207,6 +1314,8 @@
             ['Unblocked Games World', 'https://sites.google.com/site/thegamecompilation/home?authuser=0'],
             ['Now.gg Games', 'https://now.gg/'],
             ['Dancing Bunny Games', 'https://ltorl.github.io/dancing-bunny/public/v2.html'],
+            ['gn-math', 'https://gn-math.dev/'],
+            ['Ultimate Game Stash', 'https://cdn.jsdelivr.net/npm/ugs-singlefiles@1.0.6/mustard.svg'],
         ];
 
         const BAREMUX_WORKER = URL.createObjectURL(new Blob(
@@ -1234,8 +1343,31 @@
             },
         };
 
+        const THEMES = {
+            graphite: {
+                label: 'Graphite',
+                desc: 'The classic dark look with a teal accent.',
+                preview: 'linear-gradient(135deg, #282828 50%, #45a29e 50%)',
+            },
+            ocean: {
+                label: 'Ocean',
+                desc: 'Deep blue surfaces with a bright blue accent.',
+                preview: 'linear-gradient(135deg, #17212b 50%, #4f9ed1 50%)',
+            },
+            forest: {
+                label: 'Forest',
+                desc: 'Dark green surfaces with a soft green accent.',
+                preview: 'linear-gradient(135deg, #18231d 50%, #77ad7b 50%)',
+            },
+            violet: {
+                label: 'Violet',
+                desc: 'Rich purple surfaces with a lavender accent.',
+                preview: 'linear-gradient(135deg, #241d2b 50%, #b18ad8 50%)',
+            },
+        };
+
         const SETTINGS_KEY = 'altior-settings';
-        const DEFAULT_SETTINGS = { engine: 'scramjet' };
+        const DEFAULT_SETTINGS = { engine: 'scramjet', theme: 'graphite' };
 
         let settings = Object.assign({}, DEFAULT_SETTINGS);
         try {
@@ -1243,6 +1375,8 @@
             if (stored && typeof stored === 'object') Object.assign(settings, stored);
         } catch (e) { }
         if (!ENGINES[settings.engine]) settings.engine = DEFAULT_SETTINGS.engine;
+        if (!Object.hasOwn(THEMES, settings.theme)) settings.theme = DEFAULT_SETTINGS.theme;
+        document.documentElement.dataset.theme = settings.theme;
 
         function saveSettings() {
             try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings)); } catch (e) { }
@@ -2274,6 +2408,46 @@ self.addEventListener("fetch", (event) => {
             return h;
         }
 
+        function buildThemeSection(inner) {
+            inner.appendChild(settingsSection('Appearance'));
+
+            Object.entries(THEMES).forEach(([id, theme]) => {
+                const opt = document.createElement('button');
+                opt.type = 'button';
+                opt.className = 'set-option' + (id === settings.theme ? ' selected' : '');
+                opt.setAttribute('aria-pressed', id === settings.theme ? 'true' : 'false');
+
+                const swatch = document.createElement('span');
+                swatch.className = 'set-theme-swatch';
+                swatch.style.background = theme.preview;
+                swatch.setAttribute('aria-hidden', 'true');
+
+                const text = document.createElement('div');
+                const name = document.createElement('div');
+                name.className = 'set-name';
+                name.textContent = theme.label;
+                const desc = document.createElement('div');
+                desc.className = 'set-desc';
+                desc.textContent = theme.desc;
+                text.append(name, desc);
+
+                opt.append(swatch, text);
+                opt.addEventListener('click', () => {
+                    if (id === settings.theme) return;
+                    settings.theme = id;
+                    document.documentElement.dataset.theme = id;
+                    saveSettings();
+                    renderAllSettings();
+                });
+                inner.appendChild(opt);
+            });
+
+            const note = document.createElement('div');
+            note.className = 'set-note';
+            note.textContent = 'Your theme is saved on this device and changes the browser interface, not the websites you visit.';
+            inner.appendChild(note);
+        }
+
         function buildEngineSection(inner) {
             inner.appendChild(settingsSection('Proxy engine'));
 
@@ -2375,6 +2549,7 @@ self.addEventListener("fetch", (event) => {
             title.textContent = 'Settings';
             inner.appendChild(title);
 
+            buildThemeSection(inner);
             buildEngineSection(inner);
             buildWindowSection(inner);
         }
