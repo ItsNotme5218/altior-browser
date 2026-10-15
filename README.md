@@ -40,7 +40,7 @@ Most will down because of limits unless it is toward the start of the month. If 
 - **Proxied favicons** — site icons load through the proxy so they aren't blocked
   by the page's cross-origin isolation policy.
 - **Collapsible chrome** — hide the whole toolbar/tab strip for a fullscreen view.
-  <h3>v2 updates by ItsNotme5218</h3>
+  <h3>v1.1 updates by ItsNotme5218</h3>
 - **Themes** — hide the whole toolbar/tab strip for a fullscreen view.
 - **Update Games** — added new links and a custom scroll bar
 
