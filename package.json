@@ -13,7 +13,7 @@
   "keywords": [
     "proxy"
   ],
-  "author": "letrol",
+  "author": "letrol & ItsNotme5218",
   "license": "GNU AFFERO",
   "dependencies": {
     "@fastify/static": "^9.0.0",
